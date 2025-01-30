@@ -1,0 +1,30 @@
+{
+    "name": "access-tracker",
+    "version": "0.2.0",
+    "description": "Object property access tracking debugging utility.",
+    "main": "AccessTracker.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HoloTheDrunk/AccessTracker.git"
+    },
+    "keywords": [
+        "debug",
+        "tooling",
+        "dev"
+    ],
+    "author": "HoloTheDrunk",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/HoloTheDrunk/AccessTracker/issues"
+    },
+    "homepage": "https://github.com/HoloTheDrunk/AccessTracker#readme",
+    "devDependencies": {
+        "typescript": "^5.7.3"
+    },
+    "engines": {
+        "node": ">=20.6.0"
+    }
+}
