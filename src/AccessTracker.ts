@@ -119,9 +119,9 @@ class AccessTracker {
  * # Usage
  * ```ts
  * // accessTracker will log a summary to the console after 3000 milliseconds.
- * const accessTracker = new AccessTrackerProxy<{ a: number, b: number }>(3000);
- * const myObj = accessTracker.init({ a: 2, b: 1 });
- * myObj.b = myObj.a * myObj.b + myObj.a;
+ * const accessTracker = new AccessTrackerProxy<{ a: number, b?: number }>(3000);
+ * const myObj = accessTracker.init({ a: 2, b: undefined });
+ * myObj.b = myObj.a * (myObj.b ?? 1) + myObj.a;
  * console.log(myObj.b);
  * ```
  */
