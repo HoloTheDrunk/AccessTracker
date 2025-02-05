@@ -50,20 +50,15 @@ class AccessTrackerEntry {
 }
 
 class AccessTracker {
-    private accessed: Map<Record<string, unknown>, Map<string, AccessTrackerEntry>>;
-    private summary: Map<string, AccessTrackerEntry>;
+    public accessed: Map<Record<string, unknown>, Map<string, AccessTrackerEntry>>;
+    public summary: Map<string, AccessTrackerEntry>;
 
     public constructor(timeout = 2000) {
         this.accessed = new Map();
         this.summary = new Map();
 
-        // eslint-disable-next-line no-console
-        console.debug('AccessTracker initialized');
-
         if (timeout > 0) {
             setTimeout(() => {
-                // eslint-disable-next-line no-console
-                console.debug(this);
                 this.logSummary();
             }, timeout);
         }
@@ -152,5 +147,18 @@ export class AccessTrackerProxy<T extends Record<string, unknown>> {
                 return true;
             },
         }) as T;
+    }
+
+    public get<Name extends keyof T>(prop: Name): [number, number] {
+        const entry = this._tracker.summary.get(prop as string);
+
+        if (entry !== undefined) {
+            const accesses = entry.accesses;
+            const ok = accesses.filter(value => value.exists).length;
+
+            return [ok, accesses.length - ok];
+        } else {
+            return [0, 0];
+        }
     }
 }

@@ -1,5 +1,5 @@
 {
-    "include": [ "src/AccessTracker.ts" ],
+    "include": [ "src/index.ts" ],
     "exclude": [ "node_modules", "lib", "dist" ],
     "compilerOptions": {
         /* Type Checking */
@@ -11,9 +11,7 @@
         },
         "module": "ESNext",
         /* Emit */
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "outDir": "types",
+        "outDir": "dist",
         /* JavaScript Support */
         "allowJs": true,
         "checkJs": false, // set to true for type checking of js files

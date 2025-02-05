@@ -1,10 +1,14 @@
 {
     "name": "access-tracker",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Object property access tracking debugging utility.",
     "main": "AccessTracker.ts",
+    "directories": {
+        "test": "tests"
+    },
     "scripts": {
-        "build": "tsc"
+        "test": "jest",
+        "build": "tsc && tsc --emitDeclarationOnly --declaration --outDir types"
     },
     "repository": {
         "type": "git",
@@ -22,6 +26,10 @@
     },
     "homepage": "https://github.com/HoloTheDrunk/AccessTracker#readme",
     "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
         "typescript": "^5.7.3"
     },
     "engines": {
