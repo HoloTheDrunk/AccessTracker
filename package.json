@@ -2,7 +2,7 @@
     "name": "access-tracker",
     "version": "0.3.0",
     "description": "Object property access tracking debugging utility.",
-    "main": "AccessTracker.ts",
+    "main": "src/index.ts",
     "directories": {
         "test": "tests"
     },
