@@ -1,6 +1,6 @@
 {
     "name": "access-tracker",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Object property access tracking debugging utility.",
     "main": "dist/index.js",
     "directories": {
